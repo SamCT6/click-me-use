@@ -28,7 +28,7 @@ class MyApp extends StatelessWidget {
         //
         // This works for code too, not just values: Most code changes can be
         // tested with just a hot reload.
-        colorScheme: ColorScheme.fromSeed(seedColor: const Color.fromARGB(255, 9, 218, 127)),
+        colorScheme: ColorScheme.fromSeed(seedColor: const Color.fromARGB(255, 10, 74, 169)),
         useMaterial3: true,
       ),
       home: const MyHomePage(title: 'Click Me Home Page'),
@@ -72,7 +72,7 @@ class _MyHomePageState extends State<MyHomePage> {
 
   void _incrementDecrease() {
     setState(() {
-      _counter--;
+      _counter = 0;
     });
   }
 
@@ -85,8 +85,10 @@ class _MyHomePageState extends State<MyHomePage> {
       ),
       body: Center(
         child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
           children: 
           <Widget>[
+            
             const Text(
               'You have pushed the button this many times:',
             ),
@@ -94,7 +96,7 @@ class _MyHomePageState extends State<MyHomePage> {
               '$_counter',
               style: Theme.of(context).textTheme.headlineMedium,
             ),
-            FloatingActionButton.extended(onPressed: _incrementDecrease, label: Text("undo"))
+            FloatingActionButton.extended(onPressed: _incrementDecrease, label: Text("Reset"))
           ],
           
         ),
